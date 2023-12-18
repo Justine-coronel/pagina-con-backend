@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+    <script src="extraerDatos.js"></script>
+</head>
+<!--HEADER-->
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="burger-menu" onclick="toggleNav()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="infoP">
+                <a href="#"><img src="media/logo_en_contactenos.png" alt="" class="logo-fisc"></a>
+                <strong class="texto-header"> Trabajos de Graduacion</strong>
+            </div>
+
+            <img src="media/Icono-notificacion.svg" alt="" class="logo-notificacion">
+            <div class="perfil-main">
+                <strong>Giovanni Vasquez</strong>
+                <img src="media/foto.svg" alt="">
+            </div>
+        </div>
+    </header>
+    <!--NAV-->
+    <div class="todo">
+        <nav>
+            <div class="nav-options">
+                <div class="nav-proyectosActivos">
+                    <a href="#">
+                        <img src="media/Icono-proyectosActivos.svg" alt="logo-proyectosActivos">
+                        <p>Proyectos Activos</p>
+                    </a>
+                </div>
+                <div class="nav-sustentaciones">
+                    <a href="#">
+                        <img src="media/Icono-sustentacion.svg" alt="logo-sustentacion">
+                        <p>Sustentaciones</p>
+                    </a>
+                </div>
+                <div class="nav-ayuda">
+                    <a href="#">
+                        <img src="media/ayuda_icono.svg" alt="logo-ayuda">
+                        <p>Ayuda</p>
+                    </a>
+                </div>
+                <div class="nav-logout">
+                    <a href="#">
+                        <img src="media/logout.svg" alt="logo-proyectos">
+                        <p>Cerrar Sesion</p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+       
+        <!--CONTENEDOR PRINCIPAL-->
+        <div class="contenedorPrincipal">
+            <div class="tituloPagina">
+                <h3 class="tituloxd">Reportes</h3>
+            </div>
+
+            <!--FILTROS-->
+            <div class="Filtros">
+                <!--FILTRO POR CARRERA-->
+                <div class="contFiltro">
+                    <div class="filtroTitulo">
+                        <label for="listaCarreras">Carrera: </label>
+                    </div>
+                    <div class="filtroLista">
+                        <select id="listaCarreras" onchange="aplicarFiltros()">
+                            <option value="Todas" disabled selected hidden>Selecciona una opción</option>
+                            <option value="Todas" id="Tcarreras">Todas las carreras</option>
+                            <option value="Licenciatura en Ingeniería de Sistemas de Información">Lic.
+                                Ing.
+                                Sist. Informacion</option>
+                            <option value="Licenciatura en Ingeniería de Sistemas de Información Gerencial">Lic. Sist.
+                                Inf. Gerencial</option>
+                            <option value="Licenciatura en Ingeniería de Sistemas y Computación">Lic. Ing. Sist.
+                                Computacion</option>
+                            <option value="Licenciatura en Ingenierá de Software">Lic. Ing. Software</option>
+                            <option value="Licenciatura en Ciberseguridad">Lic. Ciberseguridad</option>
+                            <option value="Licenciatura en Ciencias de la Computación">Lic. Ciencias Computacion
+                            </option>
+                            <option value="Licenciatura en Desarrollo de Software">Lic. Des. Software</option>
+                            <option value="Licenciatura en Desarrollo y Gestion de Software">LIc. Des. y Gest. Software
+                            </option>
+                            <option value="Licenciatura en Informática Aplicada a la Educación">Lic. Inf. Aplic.
+                                Educacion</option>
+                            <option value="Licenciatura en Redes Informáticas">Lic. Redes Informaticas</option>
+                            <option value="Tecnico">Tec. Inf. Gest. Empresarial</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--FILTRO POR AÑO-->
+                <div class="contFiltro">
+                    <div class="filtroTitulo">
+                        <label for="listaAno">Año: </label>
+                    </div>
+                    <div class="filtroLista">
+                        <select name="listaAno" id="listaAno" onchange="aplicarFiltros()">
+                            <option value="Ambos" disabled selected hidden>Selecciona una opción</option>
+                            <option value="Ambos">Ambos</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!--BARRA DE BUSQUEDA-->
+                <div class="contFiltro">
+                    <div class="filtroTitulo">
+                        <a>Buscar:</a>
+                    </div>
+
+                    <div class="filtroLista">
+                        <input type="text" class="filtroBusqueda" id="barraBusqueda" placeholder="Buscar...">
+                    </div>
+                </div>
+
+                <!--FILTRO POR ETAPA-->
+                <div class="contFiltro">
+                    <div class="filtroTitulo">
+                        <label for="listaEtapa">Etapa: </label>
+                    </div>
+                    <div class="filtroLista">
+                        <select name="listaEtapa" id="listaEtapa" onchange="aplicarFiltros()">
+                            <option value="Todas" disabled selected hidden>Selecciona una opción</option>
+                            <option value="Todas">Todas las Etapas</option>
+                            <option value="Entrega">Entrega</option>
+                            <option value="Verificacion">Verificación</option>
+                            <option value="Evaluacion">Evaluación</option>
+                            <option value="Aprobacion">Aprobación</option>
+                            <option value="Sustentacion">Sustentación</option>   
+                        </select>
+                    </div>
+
+                </div>
+
+                <!--FILTRO POR SEMESTRE-->
+                <div class="contFiltro">
+                    <div class="filtroTitulo">
+                        <label for="listaSemestre">Semestre: </label>
+                    </div>
+
+                    <div class="filtroLista">
+                        <select name="listaSemestre" id="listaSemestre" onchange="aplicarFiltros()">
+                            <option value="Ambos" disabled selected hidden>Selecciona una opción</option>
+                            <option value="Ambos">Ambos Semestres</option>
+                            <option value="1">Primer semestre</option>
+                            <option value="2">Segundo semestre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="contFiltro">
+                    <div class="filtroTitulo">
+                        <label for="listaTipoTrabajo">Tipo trabajo: </label>
+                    </div>
+
+                    <div class="listaTipoTrabajo">
+                        <select name="listaTipoTrabajo" id="listaTipoTrabajo" onchange="aplicarFiltros()">
+                            <option value="Todas" disabled selected hidden>Selecciona una opción</option>
+                            <option value="Todas">Todos</option>
+                            <option value="TT">Tesis Teorica</option>
+                            <option value="TP">Tesis Practica</option>
+                            <option value="PP">Practica Profesional</option>
+                            <option value="Certificacion">Certificación</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!--TABLA CON INFORMACION-->
+            <div class="contenedorTabla">
+                <table class="tablaInfo" id="tablaInfo">
+                    <thead>
+                        <th col-index="1" class="tituloTabla" id="BI">Estudiante</th>
+                        <th col-index="2" class="tituloTabla">Cédula</th>
+                        <th col-index="3" class="tituloTabla">Tipo de proyecto</th>
+                        <th col-index="4" class="tituloTabla">Título de proyecto</th>
+                        <th col-index="5" class="tituloTabla">Etapa</th>
+                        <th col-index="6" class="tituloTabla">Carrera</th>
+                        <th col-index="7" class="tituloTabla">Semestre</th>
+                        <!--OCULTAR EMPRESA-->
+                        <th col-index="9" class="tituloTabla">Empresa</th>
+                        <th col-index="8" class="tituloTabla">Año</th>
+                        <th col-index="10" class="tituloTabla" id="BD">Sustentacion</th>
+                    </thead>
+                    <!--TABLA DE DATOS-->
+                    <tbody id="cuerpoTabla">
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <!--BOTONES DE PAGINACION-->
+            <div class="pagination">
+                <button id="botonAnterior">Anterior</button>
+                <button id="botonSiguiente">Siguiente</button>
+            </div>
+
+        </div>
+    </div>
+    
+ <!--FOOTER-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer">
+                <div class="info-footer">
+                    <img src="media/Logo UTP Blanco.png" alt="logo utp blanco">
+                    <p>Este sitio es administrado por la Facultad<br>
+                        de Ingenieria en Sistemas<br>
+                        Computacionales. Proyecto web donado<br>
+                        por el grupo 1LS121, segundo semestre<br>
+                        2023.
+                    </p>
+                </div>
+                <div class="contacto">
+                    <h1>Contacto</h1>
+                    <p>Avenida Universidad Tecnológica de Panamá, Vía Puente <br>
+                        Centenario, Campus Metropolitano Dr. Victor Levi Sasso, <br>
+                        Edificio No.3, tercer piso. <br>
+                        Teléfono: (507) 560-3639 y (507) 560-3619 <br>
+                        E-mail: <a class="email" href="#">sindy.delosrios@utp.ac.pa</a>
+                    </p>
+                </div>
+                <div class="redes">
+                    <img src="media/facebook.png" alt="facebook">
+                    <img src="media/instagram.png" alt="instagram">
+                    <img src="media/youtube.png" alt="youtube">
+                    <img src="media/Linkedin.png" alt="linkedin">
+                    <img src="media/twitter.png" alt="twitter x">
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 - Universidad Tecnológica de Panamá</p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>
